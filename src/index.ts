@@ -1,6 +1,8 @@
-import { Application } from 'probot'
+import { Probot } from 'probot'
 import { createIssue } from './securityAlertHandler'
 
-export = (app: Application) => {
-  app.on('repository_vulnerability_alert.create', async context => createIssue(context))
+export = (app: Probot) => {
+  app.log.info("secret_scanning_alert.created detected!");
+  app.on('secret_scanning_alert.created', async context => createIssue(context))
 }
+

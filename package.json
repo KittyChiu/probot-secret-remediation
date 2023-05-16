@@ -1,12 +1,10 @@
 {
-  "name": "probot-security-alerts",
-  "version": "1.0.0",
-  "description": "File issues for GitHub security alerts",
-  "author": "Pablo Cantero <pablohstc@gmail.com> (https://github.com/phstc/probot-security-alerts)",
+  "name": "probot-secret-remediation",
+  "version": "2.0.0",
+  "description": "Create remediation issue for push protection fix-later bypass https://github.com/KittyChiu/probot-secret-remediation",
+  "author": "Kitty Chiu",
   "license": "ISC",
-  "repository": "https://github.com/phstc/probot-security-alerts.git",
-  "homepage": "https://github.com/phstc/probot-security-alerts",
-  "bugs": "https://github.com/phstc/probot-security-alerts/issues",
+  "homepage": "https://github.com/KittyChiu/probot-secret-remediation",
   "keywords": [
     "probot",
     "github",
@@ -22,25 +20,23 @@
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
-    "probot": "^7.0.0"
+    "probot": "^12.2.4"
   },
   "devDependencies": {
-    "@types/jest": "^23.1.5",
-    "@types/node": "^10.5.2",
-    "eslint-plugin-typescript": "^0.12.0",
-    "jest": "^23.4.0",
-    "nodemon": "^1.17.2",
-    "smee-client": "^1.0.2",
-    "standard": "^10.0.3",
-    "ts-jest": "^23.0.0",
-    "typescript": "^2.9.2",
-    "typescript-eslint-parser": "^18.0.0"
+    "@typescript-eslint/eslint-plugin": "^5.59.6",
+    "@typescript-eslint/parser": "^5.59.6",
+    "jest": "^29.0.0",
+    "nodemon": "^2.0.22",
+    "smee-client": "^1.2.2",
+    "standard": "^17.0.0",
+    "ts-jest": "^29.1.0",
+    "typescript": "^4.9.5"
   },
   "engines": {
-    "node": ">= 8.3.0"
+    "node": ">= 10.13.0"
   },
   "standard": {
-    "parser": "typescript-eslint-parser",
+    "parser": "@typescript-eslint/parser",
     "env": [
       "jest"
     ],

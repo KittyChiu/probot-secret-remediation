@@ -1,22 +1,29 @@
-export const SECURITY = 'security'
+export const labels = 'secret detected'
 
 export async function createIssue(context: any) {
   const alert = context.payload.alert
-  const github = context.github
-  const repo = context.payload.repository.name
-  const owner = context.payload.repository.owner.login
 
-  const title = `Security vulnerability found in ${alert.affected_package_name}`
+  if (alert.push_protection_bypassed == true) {
 
-  const body = `- Affected version ${alert.affected_package_name} ${
-    alert.affected_range
-  } \n- Fixed in ${alert.fixed_in}`
+    const repo = context.payload.repository.name
+    const repo_fullname = context.payload.repository.full_name
+    const owner = context.payload.repository.owner.login
+    const title = `Secret detected in ${repo_fullname}`
 
-  await github.issues.create({
-    owner,
-    repo,
-    title,
-    body,
-    labels: [SECURITY]
-  })
+    const body = `#### Secret detected 
+      \n- Type: ${alert.secret_type} 
+      \n- Bypassed at: ${alert.push_protection_bypassed_at}
+      \n- Bypassed by: @${alert.push_protection_bypassed_by.login}
+      \n- ${ alert.html_url }
+      \n#### Remediation tasks:
+      \n- Revoke the secret and remove from the repository. Ref: [Revoke Secret article](https://docs.github.com/en/github/administering-a-repository/about-secret-scanning#remediation-tasks)`
+
+      await context.octokit.request('POST /repos/{owner}/{repo}/issues', {
+      owner: owner,
+      repo: repo,
+      title: title,
+      body: body,
+      labels: [ labels ]
+    })
+  } 
 }

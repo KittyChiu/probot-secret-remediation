@@ -39,11 +39,12 @@ default_events:
 # - release
 # - repository
 # - repository_import
-- repository_vulnerability_alert
+# - repository_vulnerability_alert
 # - status
 # - team
 # - team_add
 # - watch
+- secret_scanning_alert
 
 # The set of permissions needed by the GitHub App. The format of the object uses
 # the permission name for the key (for example, issues) and the access type for
@@ -121,6 +122,11 @@ default_permissions:
   # Get notified of, and update, content references.
   # https://developer.github.com/v3/apps/permissions/
   # organization_administration: read
+
+  # Secret scanning alerts.
+  # https://docs.github.com/en/rest/overview/permissions-required-for-github-apps?apiVersion=2022-11-28#secret-scanning-alerts
+  # https://docs.github.com/en/webhooks-and-events/webhooks/webhook-events-and-payloads#secret_scanning_alert
+  secret_scanning_alerts: read
 
 
 # The name of the GitHub App. Defaults to the name specified in package.json
