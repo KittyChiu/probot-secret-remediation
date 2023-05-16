@@ -1,6 +1,6 @@
-# probot-security-alerts
+# probot-secret-remediation
 
-> A GitHub App built with [Probot](https://github.com/probot/probot) that File issues for GitHub security alerts
+> A GitHub App built with [Probot](https://github.com/probot/probot) that creates remediation issue for push protection fix-later bypass.
 
 ## Setup
 
@@ -17,10 +17,10 @@ npm start
 
 ## Contributing
 
-If you have suggestions for how probot-security-alerts could be improved, or want to report a bug, open an issue! We'd love all and any contributions.
+If you have suggestions for how probot-secret-remediation could be improved, or want to report a bug, open an issue! We'd love all and any contributions.
 
 For more, check out the [Contributing Guide](CONTRIBUTING.md).
 
 ## License
 
-[ISC](LICENSE) © 2018 Pablo Cantero <pablohstc@gmail.com> (https://github.com/phstc/probot-security-alerts)
+[ISC](LICENSE) 2023, @KittyChiu (https://github.com/KittyChiu/probot-secret-remediation)
