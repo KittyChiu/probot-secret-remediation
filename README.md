@@ -23,4 +23,4 @@ For more, check out the [Contributing Guide](CONTRIBUTING.md).
 
 ## License
 
-[ISC](LICENSE) 2023, @KittyChiu (https://github.com/KittyChiu/probot-secret-remediation)
+[ISC](LICENSE)
